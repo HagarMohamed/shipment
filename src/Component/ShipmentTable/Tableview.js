@@ -1,5 +1,5 @@
 import React from 'react'
-import ErrorTemplate from './ErrorTemplate';
+import ErrorTemplate from '../ErrorTemplate';
 import Table from 'react-bootstrap/esm/Table';
 import ShipmentItem from './ShipmentItem';
 

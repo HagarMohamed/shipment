@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ShipmentDetails from "./Component/ShipmentDetails";
-import ShipmentsTable from "./Component/ShipmentsTable";
+import ShipmentsTable from "./Component/ShipmentTable/ShipmentsTable";
 import Home from "./Component/Home";
 import PageNotfound from "./Component/PageNotfound";
 
