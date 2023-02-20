@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import Tableview from "./Tableview";
 import axios from 'axios';
+import Spinner from 'react-bootstrap/Spinner';
+import localData from "../data";
 
 const ShipmentsTable = () => {
 
@@ -25,20 +27,36 @@ const ShipmentsTable = () => {
 
   // Fetch Data With Axios
   const [data, setShips] = useState([])
-  const fetchAxios = async () =>{
-   let responce = await axios.get('https://my.api.mockaroo.com/shipments.json?key=5e0b62d0')
-   setShips(responce.data)
+  let [loading, setLoading] = useState(true)
+
+
+  const fetchAxios = async () => {
+    await axios.get('https://my.api.mockaroo.com/shipments.json?key=5e0b62d0').then(responce => {
+      setLoading(false);
+        setShips(responce.data)
+    }).catch(error => {
+      setLoading(false);
+      setShips(localData)
+    })
+
   }
-  useEffect( () => {
+
+
+
+  useEffect(() => {
     fetchAxios()
-}, [])
+  }, [])
 
 
 
 
   return (
     <div>
+      {
+      loading === true? (<Spinner animation="border" variant="info" id="spintarget"/>) : (
       <Tableview data={data}  updateItem={updateItem} deleteItem={deleteItem}/>
+      )
+      }
     </div>
 
     

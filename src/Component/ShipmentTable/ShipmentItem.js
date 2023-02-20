@@ -24,10 +24,11 @@ const ShipmentItem = (props) => {
                 <td>{props.status}</td>
                 <td>{props.consignee}</td>
                 <td>
-                  <Button onClick={handleUpdate} variant="info">details</Button>{" "}
+                  <Button onClick={handleUpdate} variant="info"><i className="fa fa-id-card" 
+                  style={{color: "#fff"}}></i></Button>{" "}
                   </td>
                   <td>
-                  <Button onClick={handleDelete} variant="danger">delete</Button>{" "}
+                  <Button onClick={handleDelete} variant="danger"><i className="fa fa-close"></i></Button>{" "}
                 </td>
               </tr>
   )

@@ -2,7 +2,9 @@ import React from "react";
 import Form from "react-bootstrap/Form"
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row';
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import Button from "react-bootstrap/esm/Button";
+
 
 const ShipmentDetails = () => {
 
@@ -42,7 +44,8 @@ const ShipmentDetails = () => {
       </Row>
       </Form>
 
-      
+      <Button  variant="warning"><Link to="/ShipmentsTable" style={{textDecoration: "none",
+    color: "black"}}>Back</Link></Button>{' '}
     </div>
   );
 };

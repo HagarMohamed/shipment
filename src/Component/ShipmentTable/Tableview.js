@@ -3,9 +3,10 @@ import ErrorTemplate from '../ErrorTemplate';
 import Table from 'react-bootstrap/esm/Table';
 import ShipmentItem from './ShipmentItem';
 
+
 const Tableview = ({data, deleteItem, updateItem}) => {
   return (
-    <Table responsive="sm">
+    <Table className='table' responsive="sm" style={{marginTop: "20px"}}>
     <thead>
       <tr>
         <th>ORDERNO</th>
@@ -19,7 +20,9 @@ const Tableview = ({data, deleteItem, updateItem}) => {
       </tr>
     </thead>
     <tbody>
-      {data.length ? (
+
+      { 
+      data.length ? (
         data.map((item, index) => {
           return (
             <ShipmentItem
